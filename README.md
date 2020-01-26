@@ -1,4 +1,4 @@
-# fireman
+# Application to connect with Firebase, Firestore and Cloud Firebase Storage
 
 A new Flutter application.
 
