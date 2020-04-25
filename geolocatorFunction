@@ -1,0 +1,11 @@
+getUserLocation() async{
+    Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    List<Placemark> placemarks = await Geolocator().placemarkFromCoordinates(position.latitude, position.longitude);
+    print('placemark $placemarks');
+    Placemark getAddress = placemarks[0];
+    String exactAddress = '${getAddress.locality}' + ' , ' + '${getAddress.country}';
+    print(exactAddress);
+    setState((){
+      locationController.text = exactAddress;
+    });
+  }
